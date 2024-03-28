@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:user_sample/getIt/get_it.dart';
 
 import 'router/router.dart';
 
@@ -9,6 +10,7 @@ final GlobalKey<NavigatorState> shellNavigatorKey =
 
 
 void main() {
+  setGetIt();
   runApp(const MyApp());
 }
 

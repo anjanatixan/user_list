@@ -1,4 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'userConverter.dart';
 part 'user_model.freezed.dart';
 part 'user_model.g.dart';
 
@@ -10,6 +12,7 @@ class UserModel with _$UserModel {
     int? totalUsers,
     int? offset,
     int? limit,
+    @UserConverter()
     required List<User> users,
   }) = _UserModel;
 

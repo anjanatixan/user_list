@@ -1,121 +1,125 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:user_sample/helper/utils.dart';
 import 'package:user_sample/router/router.dart';
+import 'package:user_sample/user_bloc/user_bloc_bloc.dart';
 
 class UserListScreen extends StatelessWidget {
   const UserListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView.separated(
-        itemCount: 12,
-        itemBuilder: (context,index){
-        return InkWell(
-          onTap: (){
-            GoRouter.of(context).push(AppRoutes.userDetails);
+    final UserBlocBloc userBlocBloc = GetIt.I<UserBlocBloc>();
+    return BlocProvider(
+      create: (context) => userBlocBloc..add(Started()),
+      child: Scaffold(
+        body: BlocBuilder<UserBlocBloc, UserBlocState>(
+          builder: (cnxt, state) {
+            switch (state.status) {
+              case BlocStatus.initial:
+                return Container(
+                    height: MediaQuery.of(cnxt).size.height,
+                    width: MediaQuery.of(cnxt).size.width,
+                    child: Center(child: CircularProgressIndicator()));
+              case BlocStatus.success:
+                return bodyWidget(state, cnxt);
+              case BlocStatus.error:
+                return Text("Something Went wrong");
+            }
           },
-          child: Container(
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Row(
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        backgroundImage: NetworkImage(
-                             "https://www.vhv.rs/dpng/d/15-155087_dummy-image-of-user-hd-png-download.png"),
-                      ),
-                      SizedBox(
-                        width: 8,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                              ("Anjana") +
-                                  " " +
-                                  ("Tixan"),
-                              style: GoogleFonts.poppins(
-                                  fontSize: 12,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500)),
-                          Text( "Job :f",
-                              style: GoogleFonts.poppins(
-                                  fontSize: 12,
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w400)),
-                                  Text( "Country :f",
-                              style: GoogleFonts.poppins(
-                                  fontSize: 12,
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w400))
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              ),
-        );
-      }, separatorBuilder: (BuildContext context, int index) { 
-        return Divider(
-          color: Colors.grey.withOpacity(0.1),
-        );
-       },),
-    );
-  }
-
-  drawerWidget(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          DrawerHeader(
-            decoration: BoxDecoration(color: Colors.blue[50]),
-            child: Column(
-              children: [
-                SizedBox(height: 5),
-                Center(
-                  child: CircleAvatar(
-                    radius: 30,
-                    backgroundImage: NetworkImage(
-                        "https://www.vhv.rs/dpng/d/15-155087_dummy-image-of-user-hd-png-download.png"),
-                  ),
-                ),
-                SizedBox(height: 10),
-                Text("Flutter Developer",
-                    style: GoogleFonts.poppins(
-                        fontSize: 14, fontWeight: FontWeight.w500)),
-              Text("abc@gmail.com",
-                    style: GoogleFonts.poppins(
-                        fontSize: 13, fontWeight: FontWeight.w400)),
-              ],
-            ),
-          ),
-          ListTile(
-            leading: Icon(
-              Icons.list_alt_rounded,
-            ),
-            title:  Text('User List', style: GoogleFonts.poppins(
-                        fontSize: 14, fontWeight: FontWeight.w500)),
-            onTap: () {
-              GoRouter.of(context).go(AppRoutes.userList);
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: Icon(
-              Icons.info_outline,
-            ),
-            title:  Text('About', style: GoogleFonts.poppins(
-                        fontSize: 14, fontWeight: FontWeight.w500)),
-            onTap: () {
-              GoRouter.of(context).push(AppRoutes.about);
-              Navigator.pop(context);
-            },
-          ),
-        ],
+        ),
       ),
     );
   }
-}
+  }
+
+  bodyWidget(UserBlocState state, BuildContext ctx) {
+    final ScrollController _scrollController = ScrollController();
+    return ListView.separated(
+      shrinkWrap: true,
+
+       controller: _scrollController
+        ..addListener(() {
+        
+
+          if (_scrollController.position.maxScrollExtent ==
+              _scrollController.offset) {
+            GetIt.I<UserBlocBloc>()
+              ..add(updateCount(state.userModel?.users.length ?? 0));
+          }
+        }),
+      itemCount: state.userModel?.users.length ?? 0,
+      itemBuilder: (context, index) {
+         var userList = state.userModel?.users[index];
+        if (index == state.userModel!.users.length - 1 && state.isFetching) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
+        }
+        return InkWell(
+          onTap: ()async {
+             await context.read<UserBlocBloc>()
+                ..add(InitialIndex(index));
+              await context.read<UserBlocBloc>()
+                ..add(updateCount(state.userModel?.users.length ?? 0));
+            GoRouter.of(context).push(AppRoutes.userDetails);
+          },
+          child: Container(
+            child: Row(
+              children: [
+                CircleAvatar(
+                  backgroundColor: Colors.white,
+                  backgroundImage: NetworkImage(userList?.profilePicture
+                          .toString() ??
+                      ""),
+                ),
+                SizedBox(
+                  width: 8,
+                ),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                          (userList?.firstName.toString() ??
+                                  "") +
+                              " " +
+                              (userList?.lastName
+                                      .toString() ??
+                                  ""),
+                          style: GoogleFonts.poppins(
+                              fontSize: 12,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500)),
+                      Text("Job :${userList?.job}",
+                          style: GoogleFonts.poppins(
+                              fontSize: 12,
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w400),overflow: TextOverflow.ellipsis,),
+                      Text("Country :${userList?.country}",
+                          style: GoogleFonts.poppins(
+                              fontSize: 12,
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w400),overflow: TextOverflow.ellipsis,)
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+        );
+      },
+      separatorBuilder: (BuildContext context, int index) {
+        return Divider(
+          color: Colors.grey.withOpacity(0.1),
+        );
+      },
+    );
+  }
+
