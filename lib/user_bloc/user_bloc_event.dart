@@ -7,4 +7,5 @@ class UserBlocEvent {
   const factory UserBlocEvent.increment(int index) = Increment;
   const factory UserBlocEvent.decrement(int index) = Decrement;
   const factory UserBlocEvent.updateCount(int count) = updateCount;
+  const factory UserBlocEvent.login(String userName,String password) = login;
 }

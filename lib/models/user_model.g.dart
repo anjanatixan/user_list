@@ -14,7 +14,7 @@ _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
       offset: json['offset'] as int?,
       limit: json['limit'] as int?,
       users: (json['users'] as List<dynamic>)
-          .map((e) => User.fromJson(e as Map<String, dynamic>))
+          .map((e) => const UserConverter().fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -25,7 +25,7 @@ Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
       'totalUsers': instance.totalUsers,
       'offset': instance.offset,
       'limit': instance.limit,
-      'users': instance.users,
+      'users': instance.users.map(const UserConverter().toJson).toList(),
     };
 
 _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(

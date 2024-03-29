@@ -25,6 +25,7 @@ mixin _$UserModel {
   int? get totalUsers => throw _privateConstructorUsedError;
   int? get offset => throw _privateConstructorUsedError;
   int? get limit => throw _privateConstructorUsedError;
+  @UserConverter()
   List<User> get users => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -44,7 +45,7 @@ abstract class $UserModelCopyWith<$Res> {
       int? totalUsers,
       int? offset,
       int? limit,
-      List<User> users});
+      @UserConverter() List<User> users});
 }
 
 /// @nodoc
@@ -110,7 +111,7 @@ abstract class _$$UserModelImplCopyWith<$Res>
       int? totalUsers,
       int? offset,
       int? limit,
-      List<User> users});
+      @UserConverter() List<User> users});
 }
 
 /// @nodoc
@@ -169,7 +170,7 @@ class _$UserModelImpl implements _UserModel {
       this.totalUsers,
       this.offset,
       this.limit,
-      required final List<User> users})
+      @UserConverter() required final List<User> users})
       : _users = users;
 
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -187,6 +188,7 @@ class _$UserModelImpl implements _UserModel {
   final int? limit;
   final List<User> _users;
   @override
+  @UserConverter()
   List<User> get users {
     if (_users is EqualUnmodifiableListView) return _users;
     // ignore: implicit_dynamic_type
@@ -238,7 +240,7 @@ abstract class _UserModel implements UserModel {
       final int? totalUsers,
       final int? offset,
       final int? limit,
-      required final List<User> users}) = _$UserModelImpl;
+      @UserConverter() required final List<User> users}) = _$UserModelImpl;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$UserModelImpl.fromJson;
@@ -254,6 +256,7 @@ abstract class _UserModel implements UserModel {
   @override
   int? get limit;
   @override
+  @UserConverter()
   List<User> get users;
   @override
   @JsonKey(ignore: true)

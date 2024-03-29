@@ -1,6 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint, override_on_non_overriding_member
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'user_bloc_bloc.dart';
@@ -23,6 +23,7 @@ mixin _$UserBlocEvent {
     required TResult Function(int index) increment,
     required TResult Function(int index) decrement,
     required TResult Function(int count) updateCount,
+    required TResult Function(String userName, String password) login,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$UserBlocEvent {
     TResult? Function(int index)? increment,
     TResult? Function(int index)? decrement,
     TResult? Function(int count)? updateCount,
+    TResult? Function(String userName, String password)? login,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,7 @@ mixin _$UserBlocEvent {
     TResult Function(int index)? increment,
     TResult Function(int index)? decrement,
     TResult Function(int count)? updateCount,
+    TResult Function(String userName, String password)? login,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +54,7 @@ mixin _$UserBlocEvent {
     required TResult Function(Increment value) increment,
     required TResult Function(Decrement value) decrement,
     required TResult Function(updateCount value) updateCount,
+    required TResult Function(login value) login,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +64,7 @@ mixin _$UserBlocEvent {
     TResult? Function(Increment value)? increment,
     TResult? Function(Decrement value)? decrement,
     TResult? Function(updateCount value)? updateCount,
+    TResult? Function(login value)? login,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +74,7 @@ mixin _$UserBlocEvent {
     TResult Function(Increment value)? increment,
     TResult Function(Decrement value)? decrement,
     TResult Function(updateCount value)? updateCount,
+    TResult Function(login value)? login,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -135,6 +141,7 @@ class _$StartedImpl implements Started {
     required TResult Function(int index) increment,
     required TResult Function(int index) decrement,
     required TResult Function(int count) updateCount,
+    required TResult Function(String userName, String password) login,
   }) {
     return started();
   }
@@ -147,6 +154,7 @@ class _$StartedImpl implements Started {
     TResult? Function(int index)? increment,
     TResult? Function(int index)? decrement,
     TResult? Function(int count)? updateCount,
+    TResult? Function(String userName, String password)? login,
   }) {
     return started?.call();
   }
@@ -159,6 +167,7 @@ class _$StartedImpl implements Started {
     TResult Function(int index)? increment,
     TResult Function(int index)? decrement,
     TResult Function(int count)? updateCount,
+    TResult Function(String userName, String password)? login,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -175,6 +184,7 @@ class _$StartedImpl implements Started {
     required TResult Function(Increment value) increment,
     required TResult Function(Decrement value) decrement,
     required TResult Function(updateCount value) updateCount,
+    required TResult Function(login value) login,
   }) {
     return started(this);
   }
@@ -187,6 +197,7 @@ class _$StartedImpl implements Started {
     TResult? Function(Increment value)? increment,
     TResult? Function(Decrement value)? decrement,
     TResult? Function(updateCount value)? updateCount,
+    TResult? Function(login value)? login,
   }) {
     return started?.call(this);
   }
@@ -199,6 +210,7 @@ class _$StartedImpl implements Started {
     TResult Function(Increment value)? increment,
     TResult Function(Decrement value)? decrement,
     TResult Function(updateCount value)? updateCount,
+    TResult Function(login value)? login,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -282,6 +294,7 @@ class _$InitialIndexImpl implements InitialIndex {
     required TResult Function(int index) increment,
     required TResult Function(int index) decrement,
     required TResult Function(int count) updateCount,
+    required TResult Function(String userName, String password) login,
   }) {
     return initialIndex(this.initialIndex);
   }
@@ -294,6 +307,7 @@ class _$InitialIndexImpl implements InitialIndex {
     TResult? Function(int index)? increment,
     TResult? Function(int index)? decrement,
     TResult? Function(int count)? updateCount,
+    TResult? Function(String userName, String password)? login,
   }) {
     return initialIndex?.call(this.initialIndex);
   }
@@ -306,6 +320,7 @@ class _$InitialIndexImpl implements InitialIndex {
     TResult Function(int index)? increment,
     TResult Function(int index)? decrement,
     TResult Function(int count)? updateCount,
+    TResult Function(String userName, String password)? login,
     required TResult orElse(),
   }) {
     if (initialIndex != null) {
@@ -322,6 +337,7 @@ class _$InitialIndexImpl implements InitialIndex {
     required TResult Function(Increment value) increment,
     required TResult Function(Decrement value) decrement,
     required TResult Function(updateCount value) updateCount,
+    required TResult Function(login value) login,
   }) {
     return initialIndex(this);
   }
@@ -334,6 +350,7 @@ class _$InitialIndexImpl implements InitialIndex {
     TResult? Function(Increment value)? increment,
     TResult? Function(Decrement value)? decrement,
     TResult? Function(updateCount value)? updateCount,
+    TResult? Function(login value)? login,
   }) {
     return initialIndex?.call(this);
   }
@@ -346,6 +363,7 @@ class _$InitialIndexImpl implements InitialIndex {
     TResult Function(Increment value)? increment,
     TResult Function(Decrement value)? decrement,
     TResult Function(updateCount value)? updateCount,
+    TResult Function(login value)? login,
     required TResult orElse(),
   }) {
     if (initialIndex != null) {
@@ -433,6 +451,7 @@ class _$IncrementImpl implements Increment {
     required TResult Function(int index) increment,
     required TResult Function(int index) decrement,
     required TResult Function(int count) updateCount,
+    required TResult Function(String userName, String password) login,
   }) {
     return increment(index);
   }
@@ -445,6 +464,7 @@ class _$IncrementImpl implements Increment {
     TResult? Function(int index)? increment,
     TResult? Function(int index)? decrement,
     TResult? Function(int count)? updateCount,
+    TResult? Function(String userName, String password)? login,
   }) {
     return increment?.call(index);
   }
@@ -457,6 +477,7 @@ class _$IncrementImpl implements Increment {
     TResult Function(int index)? increment,
     TResult Function(int index)? decrement,
     TResult Function(int count)? updateCount,
+    TResult Function(String userName, String password)? login,
     required TResult orElse(),
   }) {
     if (increment != null) {
@@ -473,6 +494,7 @@ class _$IncrementImpl implements Increment {
     required TResult Function(Increment value) increment,
     required TResult Function(Decrement value) decrement,
     required TResult Function(updateCount value) updateCount,
+    required TResult Function(login value) login,
   }) {
     return increment(this);
   }
@@ -485,6 +507,7 @@ class _$IncrementImpl implements Increment {
     TResult? Function(Increment value)? increment,
     TResult? Function(Decrement value)? decrement,
     TResult? Function(updateCount value)? updateCount,
+    TResult? Function(login value)? login,
   }) {
     return increment?.call(this);
   }
@@ -497,6 +520,7 @@ class _$IncrementImpl implements Increment {
     TResult Function(Increment value)? increment,
     TResult Function(Decrement value)? decrement,
     TResult Function(updateCount value)? updateCount,
+    TResult Function(login value)? login,
     required TResult orElse(),
   }) {
     if (increment != null) {
@@ -584,6 +608,7 @@ class _$DecrementImpl implements Decrement {
     required TResult Function(int index) increment,
     required TResult Function(int index) decrement,
     required TResult Function(int count) updateCount,
+    required TResult Function(String userName, String password) login,
   }) {
     return decrement(index);
   }
@@ -596,6 +621,7 @@ class _$DecrementImpl implements Decrement {
     TResult? Function(int index)? increment,
     TResult? Function(int index)? decrement,
     TResult? Function(int count)? updateCount,
+    TResult? Function(String userName, String password)? login,
   }) {
     return decrement?.call(index);
   }
@@ -608,6 +634,7 @@ class _$DecrementImpl implements Decrement {
     TResult Function(int index)? increment,
     TResult Function(int index)? decrement,
     TResult Function(int count)? updateCount,
+    TResult Function(String userName, String password)? login,
     required TResult orElse(),
   }) {
     if (decrement != null) {
@@ -624,6 +651,7 @@ class _$DecrementImpl implements Decrement {
     required TResult Function(Increment value) increment,
     required TResult Function(Decrement value) decrement,
     required TResult Function(updateCount value) updateCount,
+    required TResult Function(login value) login,
   }) {
     return decrement(this);
   }
@@ -636,6 +664,7 @@ class _$DecrementImpl implements Decrement {
     TResult? Function(Increment value)? increment,
     TResult? Function(Decrement value)? decrement,
     TResult? Function(updateCount value)? updateCount,
+    TResult? Function(login value)? login,
   }) {
     return decrement?.call(this);
   }
@@ -648,6 +677,7 @@ class _$DecrementImpl implements Decrement {
     TResult Function(Increment value)? increment,
     TResult Function(Decrement value)? decrement,
     TResult Function(updateCount value)? updateCount,
+    TResult Function(login value)? login,
     required TResult orElse(),
   }) {
     if (decrement != null) {
@@ -735,6 +765,7 @@ class _$updateCountImpl implements updateCount {
     required TResult Function(int index) increment,
     required TResult Function(int index) decrement,
     required TResult Function(int count) updateCount,
+    required TResult Function(String userName, String password) login,
   }) {
     return updateCount(count);
   }
@@ -747,6 +778,7 @@ class _$updateCountImpl implements updateCount {
     TResult? Function(int index)? increment,
     TResult? Function(int index)? decrement,
     TResult? Function(int count)? updateCount,
+    TResult? Function(String userName, String password)? login,
   }) {
     return updateCount?.call(count);
   }
@@ -759,6 +791,7 @@ class _$updateCountImpl implements updateCount {
     TResult Function(int index)? increment,
     TResult Function(int index)? decrement,
     TResult Function(int count)? updateCount,
+    TResult Function(String userName, String password)? login,
     required TResult orElse(),
   }) {
     if (updateCount != null) {
@@ -775,6 +808,7 @@ class _$updateCountImpl implements updateCount {
     required TResult Function(Increment value) increment,
     required TResult Function(Decrement value) decrement,
     required TResult Function(updateCount value) updateCount,
+    required TResult Function(login value) login,
   }) {
     return updateCount(this);
   }
@@ -787,6 +821,7 @@ class _$updateCountImpl implements updateCount {
     TResult? Function(Increment value)? increment,
     TResult? Function(Decrement value)? decrement,
     TResult? Function(updateCount value)? updateCount,
+    TResult? Function(login value)? login,
   }) {
     return updateCount?.call(this);
   }
@@ -799,6 +834,7 @@ class _$updateCountImpl implements updateCount {
     TResult Function(Increment value)? increment,
     TResult Function(Decrement value)? decrement,
     TResult Function(updateCount value)? updateCount,
+    TResult Function(login value)? login,
     required TResult orElse(),
   }) {
     if (updateCount != null) {
@@ -818,12 +854,184 @@ abstract class updateCount implements UserBlocEvent {
 }
 
 /// @nodoc
+abstract class _$$loginImplCopyWith<$Res> {
+  factory _$$loginImplCopyWith(
+          _$loginImpl value, $Res Function(_$loginImpl) then) =
+      __$$loginImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String userName, String password});
+}
+
+/// @nodoc
+class __$$loginImplCopyWithImpl<$Res>
+    extends _$UserBlocEventCopyWithImpl<$Res, _$loginImpl>
+    implements _$$loginImplCopyWith<$Res> {
+  __$$loginImplCopyWithImpl(
+      _$loginImpl _value, $Res Function(_$loginImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userName = null,
+    Object? password = null,
+  }) {
+    return _then(_$loginImpl(
+      null == userName
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$loginImpl implements login {
+  const _$loginImpl(this.userName, this.password);
+
+  @override
+  final String userName;
+  @override
+  final String password;
+
+  @override
+  String toString() {
+    return 'UserBlocEvent.login(userName: $userName, password: $password)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$loginImpl &&
+            (identical(other.userName, userName) ||
+                other.userName == userName) &&
+            (identical(other.password, password) ||
+                other.password == password));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, userName, password);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$loginImplCopyWith<_$loginImpl> get copyWith =>
+      __$$loginImplCopyWithImpl<_$loginImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(int initialIndex) initialIndex,
+    required TResult Function(int index) increment,
+    required TResult Function(int index) decrement,
+    required TResult Function(int count) updateCount,
+    required TResult Function(String userName, String password) login,
+  }) {
+    return login(userName, password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(int initialIndex)? initialIndex,
+    TResult? Function(int index)? increment,
+    TResult? Function(int index)? decrement,
+    TResult? Function(int count)? updateCount,
+    TResult? Function(String userName, String password)? login,
+  }) {
+    return login?.call(userName, password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(int initialIndex)? initialIndex,
+    TResult Function(int index)? increment,
+    TResult Function(int index)? decrement,
+    TResult Function(int count)? updateCount,
+    TResult Function(String userName, String password)? login,
+    required TResult orElse(),
+  }) {
+    if (login != null) {
+      return login(userName, password);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Started value) started,
+    required TResult Function(InitialIndex value) initialIndex,
+    required TResult Function(Increment value) increment,
+    required TResult Function(Decrement value) decrement,
+    required TResult Function(updateCount value) updateCount,
+    required TResult Function(login value) login,
+  }) {
+    return login(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Started value)? started,
+    TResult? Function(InitialIndex value)? initialIndex,
+    TResult? Function(Increment value)? increment,
+    TResult? Function(Decrement value)? decrement,
+    TResult? Function(updateCount value)? updateCount,
+    TResult? Function(login value)? login,
+  }) {
+    return login?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Started value)? started,
+    TResult Function(InitialIndex value)? initialIndex,
+    TResult Function(Increment value)? increment,
+    TResult Function(Decrement value)? decrement,
+    TResult Function(updateCount value)? updateCount,
+    TResult Function(login value)? login,
+    required TResult orElse(),
+  }) {
+    if (login != null) {
+      return login(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class login implements UserBlocEvent {
+  const factory login(final String userName, final String password) =
+      _$loginImpl;
+
+  String get userName;
+  String get password;
+  @JsonKey(ignore: true)
+  _$$loginImplCopyWith<_$loginImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$UserBlocState {
   BlocStatus get status => throw _privateConstructorUsedError;
   int? get index => throw _privateConstructorUsedError;
   int? get initialIndex => throw _privateConstructorUsedError;
   int? get count => throw _privateConstructorUsedError;
   bool get isFetching => throw _privateConstructorUsedError;
+  String? get userName => throw _privateConstructorUsedError;
+  String? get passWord => throw _privateConstructorUsedError;
+  bool? get authenticated => throw _privateConstructorUsedError;
   UserModel? get userModel => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -843,6 +1051,9 @@ abstract class $UserBlocStateCopyWith<$Res> {
       int? initialIndex,
       int? count,
       bool isFetching,
+      String? userName,
+      String? passWord,
+      bool? authenticated,
       UserModel? userModel});
 
   $UserModelCopyWith<$Res>? get userModel;
@@ -866,6 +1077,9 @@ class _$UserBlocStateCopyWithImpl<$Res, $Val extends UserBlocState>
     Object? initialIndex = freezed,
     Object? count = freezed,
     Object? isFetching = null,
+    Object? userName = freezed,
+    Object? passWord = freezed,
+    Object? authenticated = freezed,
     Object? userModel = freezed,
   }) {
     return _then(_value.copyWith(
@@ -889,6 +1103,18 @@ class _$UserBlocStateCopyWithImpl<$Res, $Val extends UserBlocState>
           ? _value.isFetching
           : isFetching // ignore: cast_nullable_to_non_nullable
               as bool,
+      userName: freezed == userName
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      passWord: freezed == passWord
+          ? _value.passWord
+          : passWord // ignore: cast_nullable_to_non_nullable
+              as String?,
+      authenticated: freezed == authenticated
+          ? _value.authenticated
+          : authenticated // ignore: cast_nullable_to_non_nullable
+              as bool?,
       userModel: freezed == userModel
           ? _value.userModel
           : userModel // ignore: cast_nullable_to_non_nullable
@@ -923,6 +1149,9 @@ abstract class _$$UserBlocStateImplCopyWith<$Res>
       int? initialIndex,
       int? count,
       bool isFetching,
+      String? userName,
+      String? passWord,
+      bool? authenticated,
       UserModel? userModel});
 
   @override
@@ -945,6 +1174,9 @@ class __$$UserBlocStateImplCopyWithImpl<$Res>
     Object? initialIndex = freezed,
     Object? count = freezed,
     Object? isFetching = null,
+    Object? userName = freezed,
+    Object? passWord = freezed,
+    Object? authenticated = freezed,
     Object? userModel = freezed,
   }) {
     return _then(_$UserBlocStateImpl(
@@ -968,6 +1200,18 @@ class __$$UserBlocStateImplCopyWithImpl<$Res>
           ? _value.isFetching
           : isFetching // ignore: cast_nullable_to_non_nullable
               as bool,
+      userName: freezed == userName
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      passWord: freezed == passWord
+          ? _value.passWord
+          : passWord // ignore: cast_nullable_to_non_nullable
+              as String?,
+      authenticated: freezed == authenticated
+          ? _value.authenticated
+          : authenticated // ignore: cast_nullable_to_non_nullable
+              as bool?,
       userModel: freezed == userModel
           ? _value.userModel
           : userModel // ignore: cast_nullable_to_non_nullable
@@ -985,6 +1229,9 @@ class _$UserBlocStateImpl implements _UserBlocState {
       this.initialIndex,
       this.count,
       required this.isFetching,
+      this.userName,
+      this.passWord,
+      this.authenticated,
       this.userModel});
 
   @override
@@ -998,11 +1245,17 @@ class _$UserBlocStateImpl implements _UserBlocState {
   @override
   final bool isFetching;
   @override
+  final String? userName;
+  @override
+  final String? passWord;
+  @override
+  final bool? authenticated;
+  @override
   final UserModel? userModel;
 
   @override
   String toString() {
-    return 'UserBlocState(status: $status, index: $index, initialIndex: $initialIndex, count: $count, isFetching: $isFetching, userModel: $userModel)';
+    return 'UserBlocState(status: $status, index: $index, initialIndex: $initialIndex, count: $count, isFetching: $isFetching, userName: $userName, passWord: $passWord, authenticated: $authenticated, userModel: $userModel)';
   }
 
   @override
@@ -1017,13 +1270,19 @@ class _$UserBlocStateImpl implements _UserBlocState {
             (identical(other.count, count) || other.count == count) &&
             (identical(other.isFetching, isFetching) ||
                 other.isFetching == isFetching) &&
+            (identical(other.userName, userName) ||
+                other.userName == userName) &&
+            (identical(other.passWord, passWord) ||
+                other.passWord == passWord) &&
+            (identical(other.authenticated, authenticated) ||
+                other.authenticated == authenticated) &&
             (identical(other.userModel, userModel) ||
                 other.userModel == userModel));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, status, index, initialIndex, count, isFetching, userModel);
+  int get hashCode => Object.hash(runtimeType, status, index, initialIndex,
+      count, isFetching, userName, passWord, authenticated, userModel);
 
   @JsonKey(ignore: true)
   @override
@@ -1039,6 +1298,9 @@ abstract class _UserBlocState implements UserBlocState {
       final int? initialIndex,
       final int? count,
       required final bool isFetching,
+      final String? userName,
+      final String? passWord,
+      final bool? authenticated,
       final UserModel? userModel}) = _$UserBlocStateImpl;
 
   @override
@@ -1051,6 +1313,12 @@ abstract class _UserBlocState implements UserBlocState {
   int? get count;
   @override
   bool get isFetching;
+  @override
+  String? get userName;
+  @override
+  String? get passWord;
+  @override
+  bool? get authenticated;
   @override
   UserModel? get userModel;
   @override

@@ -11,7 +11,7 @@ final String name;
     required this.child,
     required this.name
   });
-  final List<String> screenTitles = ["User List", "About"];
+  final List<String> screenTitles = ["User List", "About","Login"];
 
   @override
   Widget build(BuildContext context) {
@@ -87,6 +87,10 @@ final String name;
       case 1:
         GoRouter.of(context).push(AppRoutes.about);
         break;
+      case 2:
+      GoRouter.of(context).push(AppRoutes.login);
+        
+        
     }
   }
 }
