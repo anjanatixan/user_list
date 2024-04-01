@@ -44,6 +44,7 @@ class UserBlocBloc extends Bloc<UserBlocEvent, UserBlocState> {
       if (event.userName == event.password) {
         emit(state.copyWith(authenticated: true));
         await saveAuthenticatedStatus(true);
+        
       } else {
         emit(state.copyWith(authenticated: false));
       }

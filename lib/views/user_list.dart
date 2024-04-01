@@ -12,10 +12,7 @@ class UserListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final UserBlocBloc userBlocBloc = GetIt.I<UserBlocBloc>();
-    return BlocProvider(
-      create: (context) => userBlocBloc..add(Started()),
-      child: Scaffold(
+    return  Scaffold(
         body: BlocBuilder<UserBlocBloc, UserBlocState>(
           builder: (cnxt, state) {
             switch (state.status) {
@@ -31,10 +28,9 @@ class UserListScreen extends StatelessWidget {
             }
           },
         ),
-      ),
-    );
+      );
   }
-  }
+  
 
   bodyWidget(UserBlocState state, BuildContext ctx) {
     final ScrollController _scrollController = ScrollController();
@@ -64,10 +60,10 @@ class UserListScreen extends StatelessWidget {
         }
         return InkWell(
           onTap: ()async {
-             await context.read<UserBlocBloc>()
+             await GetIt.I<UserBlocBloc>()
                 ..add(InitialIndex(index));
-              await context.read<UserBlocBloc>()
-                ..add(updateCount(state.userModel?.users.length ?? 0));
+              // await context.read<UserBlocBloc>()
+              //   ..add(updateCount(state.userModel?.users.length ?? 0));
             GoRouter.of(context).push(AppRoutes.userDetails);
           },
           child: Container(
@@ -123,3 +119,4 @@ class UserListScreen extends StatelessWidget {
     );
   }
 
+}

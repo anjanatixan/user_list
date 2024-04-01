@@ -1,9 +1,12 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:user_sample/main.dart';
+import 'package:user_sample/user_bloc/user_bloc_bloc.dart';
 import 'package:user_sample/views/about.dart';
 import 'package:user_sample/views/drawerWidget.dart';
 import 'package:user_sample/views/loginPage.dart';
@@ -30,7 +33,11 @@ final router = GoRouter(
           GoRoute(
               name: "User List",
               path: AppRoutes.userList,
-              builder: (context, state) => UserListScreen(),
+              builder: (context, state) => BlocProvider.value(
+                value:GetIt.I<UserBlocBloc>()..add(Started()) ,
+                child: UserListScreen(),
+              ),
+             
               routes: [
                 GoRoute(
                   parentNavigatorKey: rootNavigatorKey,
@@ -58,9 +65,7 @@ final router = GoRouter(
     bool isAuthenticated = prefs.getBool('authenticated') ?? false;
     if (!isAuthenticated) {
       log("message");
-      return GoRouter.of(context).push(AppRoutes.login);
-    }else{
-
+      return AppRoutes.login;
     }
     return null;
   },
